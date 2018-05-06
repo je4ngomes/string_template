@@ -18,7 +18,7 @@ const template = {
         result = this.compile(result, obj);
         
         // replace pattern with result
-        string = this.replacer(string, result);
+        string = this.replace(string, result);
         
         // keep calling format til there is no more matches
         // then return actual result
@@ -36,7 +36,7 @@ const template = {
         return eval(expression[1]);
 
     },
-    replacer: (string, result) => string.replace(pattern, result)
+    replace: (string, result) => string.replace(pattern, result)
 };
 
 
