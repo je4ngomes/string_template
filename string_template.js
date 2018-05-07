@@ -1,14 +1,15 @@
 const pattern = /\${([\w+*()-=<>.'"|\[\]\s]+)}/;
 
 const template = {
-    format(string, obj={}) {
+    format(string,obj={}) {
 
         // if not string return undefined
         if (typeof string !== 'string') return;
         // if string is empty return undefined
         if (string.length === 0) return;
         // if not object throw error
-        if (typeof obj !== 'object') throw 'invalid input';
+        if (typeof obj !== 'object') 
+            throw 'expected object, got ' + typeof obj;
 
         let result = pattern.exec(string)
         
@@ -43,3 +44,4 @@ const template = {
 module.exports = {
     template
 };
+
