@@ -28,7 +28,7 @@ const template = {
     },
     compile: (expression, obj) => {
 
-        //check if the expression cotain in the object if so return it
+        //check if the expression contain in the object if so return it
         _objects: for (const prop in obj) {
             if (expression[1] === prop) 
                 return obj[prop];    
