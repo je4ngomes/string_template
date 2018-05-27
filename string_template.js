@@ -1,4 +1,4 @@
-const pattern = /\${([\w+*()-=<>.'"|\[\]\s]+)}/;
+const PATTERN = /\${([\w+*()-=<>.'"|\[\]\s]+)}/;
 
 const template = {
     format(string,obj={}) {
@@ -11,7 +11,7 @@ const template = {
         if (typeof obj !== 'object') 
             throw 'expected object, got ' + typeof obj;
 
-        let result = pattern.exec(string)
+        let result = PATTERN.exec(string)
         
         // If result equals to null return string
         if (!result) return string;
@@ -37,7 +37,7 @@ const template = {
         return eval(expression[1]);
 
     },
-    replace: (string, result) => string.replace(pattern, result)
+    replace: (string, result) => string.replace(PATTERN, result)
 };
 
 
